@@ -5,7 +5,7 @@ var app = express();
 app.get('/', function(request, response) {
     response.sendfile(__dirname + '/site/index.html');
 }).configure(function() {
-    app.use('/site', express.static(__dirname + '/site'));
+    app.use('/', express.static(__dirname + '/site'));
 }).listen(port);
 
 // "Receive without conceit, release without struggle." - Marcus Aurelius, Meditations
