@@ -50,6 +50,7 @@ var currentElements = [];
 var newlyAddedElements = [];
 var toBeRemovedElements = [];
 var positionAndRotation = [];
+var counter = 0;
 
 /**
  * Initializes the scene, camera and objects. Called when the window is
@@ -125,7 +126,15 @@ function createCSS3DObject(iFace) {
     img.src = './screens/WALL-E-' + nrString + ".jpg";
     img.width = 140;
 
-    anchor.href = "boat.html";
+    console.log(nrString)
+
+    if (counter % 2) {
+        anchor.href = "boat.html";    
+    } else {
+        anchor.href = "stuff.html";
+    }
+
+    counter++;
 
     anchor.appendChild(img);
     div.appendChild(anchor);
